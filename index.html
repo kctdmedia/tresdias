@@ -43,6 +43,10 @@ nav{background:var(--white);border-bottom:1px solid var(--border);padding:0 1.5r
 .btn.primary{background:var(--green);color:#fff;border-color:var(--green)}
 .btn.primary:hover{background:#0a5440}
 .btn.sm{padding:4px 10px;font-size:.78rem}
+.btn.blue{background:var(--blue);color:#fff;border-color:var(--blue)}
+.btn.blue:hover{background:#0e3f74}
+.btn.ghost{background:transparent;color:var(--ink-soft);border-color:var(--border)}
+.btn.ghost:hover{background:var(--surface);color:var(--ink)}
 
 .mobile-tabs{display:none;overflow-x:auto;gap:4px;padding:8px 1rem;background:var(--white);border-bottom:1px solid var(--border)}
 .mobile-tab{padding:6px 14px;border-radius:8px;font-size:.8rem;font-weight:500;color:var(--ink-soft);cursor:pointer;border:1px solid var(--border);background:var(--white);white-space:nowrap;flex-shrink:0;font-family:inherit}
@@ -51,13 +55,11 @@ nav{background:var(--white);border-bottom:1px solid var(--border);padding:0 1.5r
 
 .panel{display:none;padding:1.5rem;max-width:1100px;margin:0 auto}
 .panel.active{display:block}
-
 .load-state{text-align:center;padding:5rem 2rem;color:var(--ink-soft)}
 .spinner{width:38px;height:38px;border:3px solid var(--border);border-top-color:var(--green);border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 1rem}
 @keyframes spin{to{transform:rotate(360deg)}}
 .err-box{padding:1.25rem 1.5rem;background:var(--pink-lt);border:1px solid #E8A8C0;border-radius:var(--radius);color:#7A1F40;font-size:.9rem;line-height:1.6}
 
-/* VERIFY */
 .verify-banner{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:.9rem 1.2rem;margin-bottom:1.5rem;display:flex;align-items:center;gap:.9rem;flex-wrap:wrap;box-shadow:var(--shadow)}
 .verify-icon{width:36px;height:36px;background:var(--green-lt);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .verify-icon svg{width:17px;height:17px;fill:none;stroke:var(--green);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
@@ -69,80 +71,56 @@ nav{background:var(--white);border-bottom:1px solid var(--border);padding:0 1.5r
 .verify-input:focus{border-color:var(--green)}
 .vstatus{display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border-radius:20px;font-size:.76rem;font-weight:600;background:var(--surface);color:var(--ink-soft);border:1px solid var(--border)}
 .vstatus.ok{background:var(--green-lt);color:var(--green)}
-.vmsg{font-size:.76rem;margin-top:4px;color:var(--ink-soft)}
+.vmsg{font-size:.76rem;margin-top:4px}
 
-/* OVERALL STATS */
 .overall-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:1.5rem}
 .osc{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:1rem .9rem;text-align:center;box-shadow:var(--shadow);transition:transform .15s}
 .osc:hover{transform:translateY(-2px)}
-.osc.g{border-top:3px solid var(--green)}
-.osc.b{border-top:3px solid var(--blue)}
-.osc.pk{border-top:3px solid var(--pink)}
-.osc.am{border-top:3px solid var(--amber)}
-.osc.pu{border-top:3px solid var(--purple)}
-.osc.tl{border-top:3px solid var(--green-md)}
+.osc.g{border-top:3px solid var(--green)}.osc.b{border-top:3px solid var(--blue)}.osc.pk{border-top:3px solid var(--pink)}.osc.am{border-top:3px solid var(--amber)}.osc.pu{border-top:3px solid var(--purple)}.osc.tl{border-top:3px solid var(--green-md)}
 .osc-icon{font-size:1.2rem;margin-bottom:4px}
 .osc-num{font-family:'DM Serif Display',serif;font-size:1.8rem;line-height:1}
-.osc.g .osc-num{color:var(--green)}
-.osc.b .osc-num{color:var(--blue)}
-.osc.pk .osc-num{color:var(--pink)}
-.osc.am .osc-num{color:var(--amber)}
-.osc.pu .osc-num{color:var(--purple)}
-.osc.tl .osc-num{color:var(--green-md)}
+.osc.g .osc-num{color:var(--green)}.osc.b .osc-num{color:var(--blue)}.osc.pk .osc-num{color:var(--pink)}.osc.am .osc-num{color:var(--amber)}.osc.pu .osc-num{color:var(--purple)}.osc.tl .osc-num{color:var(--green-md)}
 .osc-lbl{font-size:.73rem;color:var(--ink-soft);margin-top:3px;line-height:1.3}
 
-/* COMEBACK STAT — big featured card */
 .comeback-card{background:linear-gradient(135deg,#0F6E56,#1A5FA8);border-radius:var(--radius);padding:1.4rem 1.6rem;margin-bottom:1.5rem;color:#fff;box-shadow:0 4px 24px rgba(15,110,86,.25);display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
 .comeback-pct{font-family:'DM Serif Display',serif;font-size:3.5rem;line-height:1;flex-shrink:0}
 .comeback-text h3{font-size:1rem;font-weight:600;margin-bottom:3px}
 .comeback-text p{font-size:.83rem;opacity:.85;line-height:1.5}
-.comeback-bar-wrap{flex:1;min-width:160px}
-.comeback-bar-track{height:10px;background:rgba(255,255,255,.25);border-radius:5px;overflow:hidden;margin-top:10px}
-.comeback-bar-fill{height:100%;border-radius:5px;background:#fff}
+.comeback-bar-track{height:8px;background:rgba(255,255,255,.25);border-radius:4px;overflow:hidden;margin-top:10px;width:100%;max-width:300px}
+.comeback-bar-fill{height:100%;border-radius:4px;background:#fff}
 
-/* SPLIT */
 .split{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:1.5rem}
 .split-panel{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
-.split-panel.men .sp-head{background:var(--blue)}
-.split-panel.women .sp-head{background:var(--pink)}
-.sp-head{padding:10px 16px;font-family:'DM Serif Display',serif;font-size:1rem;color:#fff;display:flex;align-items:center;gap:8px}
+.split-panel.men .sp-head{background:var(--blue)}.split-panel.women .sp-head{background:var(--pink)}
+.sp-head{padding:10px 16px;font-family:'DM Serif Display',serif;font-size:1rem;color:#fff}
 .sp-body{padding:14px}
 .sp-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
 .sc{background:var(--surface);border-radius:10px;padding:10px 8px;text-align:center}
 .sc-num{font-family:'DM Serif Display',serif;font-size:1.5rem;line-height:1}
 .sc-lbl{font-size:.7rem;color:var(--ink-soft);margin-top:2px;line-height:1.3}
-.sc.blue .sc-num{color:var(--blue)}
-.sc.pink .sc-num{color:var(--pink)}
-.sc.green .sc-num{color:var(--green)}
-.sc.amber .sc-num{color:var(--amber)}
-.sc.purple .sc-num{color:var(--purple)}
+.sc.blue .sc-num{color:var(--blue)}.sc.pink .sc-num{color:var(--pink)}.sc.green .sc-num{color:var(--green)}.sc.amber .sc-num{color:var(--amber)}.sc.purple .sc-num{color:var(--purple)}
 .card-title{font-size:.76rem;font-weight:600;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
 
-/* HORIZONTAL BARS (churches/cities) */
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:1.5rem}
 .card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:1.1rem;box-shadow:var(--shadow)}
 .brow{display:flex;align-items:center;gap:8px;margin-bottom:5px}
-.bl{font-size:.79rem;width:135px;flex-shrink:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--ink)}
+.bl{font-size:.79rem;width:135px;flex-shrink:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .bt{flex:1;height:7px;background:var(--border);border-radius:4px;overflow:hidden}
 .bf{height:100%;border-radius:4px}
 .bcount{font-size:.76rem;color:var(--ink-soft);min-width:30px;text-align:right;flex-shrink:0;font-weight:500}
 
-/* SEC TITLE */
 .sec-title{font-family:'DM Serif Display',serif;font-size:1rem;color:var(--ink);margin-bottom:.9rem;display:flex;align-items:center;gap:8px}
 .sec-title::after{content:'';flex:1;height:1px;background:var(--border)}
 
-/* GAP */
 .gap-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:12px}
 .gc{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:1rem;box-shadow:var(--shadow)}
 .gh{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:7px}
-.gt{font-size:.88rem;font-weight:600}
-.gp{font-size:.76rem;color:var(--ink-soft)}
+.gt{font-size:.88rem;font-weight:600}.gp{font-size:.76rem;color:var(--ink-soft)}
 .gtrack{height:5px;background:var(--border);border-radius:3px;margin-bottom:9px;overflow:hidden}
 .gfill{height:100%;border-radius:3px}
 .chips{display:flex;flex-wrap:wrap;gap:3px}
 .chip{padding:2px 6px;border-radius:20px;font-size:.68rem;font-weight:600;cursor:default}
-.chip.y{background:var(--green-lt);color:var(--green)}
-.chip.n{background:var(--pink-lt);color:var(--pink)}
+.chip.y{background:var(--green-lt);color:var(--green)}.chip.n{background:var(--pink-lt);color:var(--pink)}
 
 /* DIRECTORY */
 .dir-layout{display:grid;grid-template-columns:190px 1fr;gap:14px}
@@ -150,19 +128,24 @@ nav{background:var(--white);border-bottom:1px solid var(--border);padding:0 1.5r
 .fbox{background:var(--white);border:1px solid var(--border);border-radius:10px;overflow:hidden;box-shadow:var(--shadow)}
 .fbox-head{background:var(--ink);color:#ccc;padding:7px 10px;font-size:.72rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase}
 .fbox select{width:100%;padding:7px 9px;border:none;font-size:.81rem;font-family:inherit;background:var(--white);color:var(--ink);outline:none;cursor:pointer}
-.search-bar-wrap{position:relative;margin-bottom:12px}
-.search-input{width:100%;padding:9px 14px;border:1px solid var(--border);border-radius:10px;font-size:.9rem;font-family:inherit;background:var(--white);color:var(--ink);outline:none;box-shadow:var(--shadow);transition:border-color .15s}
+
+/* SEARCH BAR WITH CLEAR BUTTON */
+.search-row{display:flex;gap:8px;margin-bottom:12px;align-items:center}
+.search-bar-wrap{position:relative;flex:1}
+.search-input{width:100%;padding:9px 40px 9px 14px;border:1px solid var(--border);border-radius:10px;font-size:.9rem;font-family:inherit;background:var(--white);color:var(--ink);outline:none;box-shadow:var(--shadow);transition:border-color .15s}
 .search-input:focus{border-color:var(--green)}
+.search-clear{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--ink-soft);font-size:1.1rem;line-height:1;padding:2px;display:none}
+.search-clear.visible{display:block}
+.search-clear:hover{color:var(--ink)}
 .search-dropdown{position:absolute;top:calc(100% + 4px);left:0;right:0;background:var(--white);border:1px solid var(--border);border-radius:var(--radius);box-shadow:0 8px 30px rgba(0,0,0,.13);z-index:300;max-height:300px;overflow-y:auto;display:none}
 .search-dropdown.open{display:block}
 .search-item{padding:9px 14px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);transition:background .1s}
 .search-item:last-child{border-bottom:none}
 .search-item:hover{background:var(--green-lt)}
-.si-name{font-weight:500;font-size:.88rem}
-.si-meta{font-size:.76rem;color:var(--ink-soft)}
+.si-name{font-weight:500;font-size:.88rem}.si-meta{font-size:.76rem;color:var(--ink-soft)}
 .search-empty{padding:1rem 14px;font-size:.83rem;color:var(--ink-soft);text-align:center}
 
-/* TABLE — unique names list */
+/* TABLE */
 .tbl-wrap{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
 table{width:100%;border-collapse:collapse;font-size:.82rem;table-layout:fixed}
 thead{background:var(--ink)}
@@ -175,16 +158,13 @@ tr:hover td{background:var(--surface)}
 .nc:hover{text-decoration:underline}
 .pagi{display:flex;align-items:center;gap:7px;margin-top:9px;font-size:.8rem;color:var(--ink-soft)}
 .badge{display:inline-block;padding:2px 8px;border-radius:20px;font-size:.71rem;font-weight:600}
-.bm{background:var(--blue-lt);color:var(--blue)}
-.bw{background:var(--pink-lt);color:var(--pink)}
-.bt2{background:var(--green-lt);color:var(--green)}
-.bc{background:var(--amber-lt);color:var(--amber)}
-.bb{background:var(--purple-lt);color:var(--purple)}
+.bm{background:var(--blue-lt);color:var(--blue)}.bw{background:var(--pink-lt);color:var(--pink)}
+.bt2{background:var(--green-lt);color:var(--green)}.bc{background:var(--amber-lt);color:var(--amber)}
 
-/* PERSON MODAL */
+/* MODAL */
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:500;align-items:center;justify-content:center;padding:1rem}
 .modal-overlay.open{display:flex}
-.modal{background:var(--white);border-radius:var(--radius);width:100%;max-width:620px;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.22)}
+.modal{background:var(--white);border-radius:var(--radius);width:100%;max-width:640px;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.22)}
 .modal-head{padding:1.2rem 1.4rem .85rem;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;position:sticky;top:0;background:var(--white);z-index:10}
 .modal-name{font-family:'DM Serif Display',serif;font-size:1.4rem;line-height:1.2}
 .modal-sub{font-size:.8rem;color:var(--ink-soft);margin-top:2px}
@@ -200,19 +180,18 @@ tr:hover td{background:var(--surface)}
 .locked-notice{background:var(--amber-lt);border:1px solid #F5C97B;border-radius:8px;padding:9px 13px;font-size:.81rem;color:var(--amber);display:flex;align-items:center;gap:7px}
 .wlist{display:flex;flex-direction:column;gap:5px}
 .wrow{background:var(--surface);border-radius:8px;padding:7px 11px;display:flex;align-items:center;justify-content:space-between;gap:8px}
-.wnum{font-weight:600;font-size:.85rem}
-.wpos{font-size:.8rem;color:var(--ink-soft);flex:1}
+.wnum{font-weight:600;font-size:.85rem}.wpos{font-size:.8rem;color:var(--ink-soft);flex:1}
+/* Update section */
+.update-section{background:var(--green-lt);border:1px solid var(--green-md);border-radius:var(--radius);padding:1rem 1.1rem;margin-top:.5rem}
+.update-section h3{font-size:.82rem;font-weight:600;color:var(--green);margin-bottom:4px}
+.update-section p{font-size:.78rem;color:var(--ink-mid);margin-bottom:10px;line-height:1.5}
+.update-btns{display:flex;gap:8px;flex-wrap:wrap}
 
 footer{text-align:center;padding:1.5rem;font-size:.76rem;color:var(--ink-soft);border-top:1px solid var(--border);margin-top:2rem}
-
 @media(max-width:700px){
-  .panel{padding:1rem}
-  .split{grid-template-columns:1fr}
-  .two-col{grid-template-columns:1fr}
-  .overall-grid{grid-template-columns:repeat(2,1fr)}
-  .sp-stats{grid-template-columns:repeat(2,1fr)}
-  .dir-layout{grid-template-columns:1fr}
-  .cg{grid-template-columns:1fr}
+  .panel{padding:1rem}.split{grid-template-columns:1fr}.two-col{grid-template-columns:1fr}
+  .overall-grid{grid-template-columns:repeat(2,1fr)}.sp-stats{grid-template-columns:repeat(2,1fr)}
+  .dir-layout{grid-template-columns:1fr}.cg{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -220,9 +199,7 @@ footer{text-align:center;padding:1.5rem;font-size:.76rem;color:var(--ink-soft);b
 
 <nav>
   <a class="nav-brand" href="#">
-    <div class="nav-logo">
-      <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-    </div>
+    <div class="nav-logo"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
     <span class="nav-title">KC <span>Tres Días</span></span>
   </a>
   <div class="nav-tabs">
@@ -242,12 +219,11 @@ footer{text-align:center;padding:1.5rem;font-size:.76rem;color:var(--ink-soft);b
   <button class="mobile-tab" onclick="switchTab('gaps')">🗂 Missing Data</button>
 </div>
 
-<!-- ══════════════ DASHBOARD ══════════════ -->
+<!-- DASHBOARD -->
 <div id="panel-dashboard" class="panel active">
   <div id="load" class="load-state"><div class="spinner"></div><p>Fetching live data from Google Sheets…</p></div>
   <div id="errbox" class="err-box" style="display:none"></div>
   <div id="dash" style="display:none">
-
     <div class="verify-banner">
       <div class="verify-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
       <div class="verify-text">
@@ -264,14 +240,10 @@ footer{text-align:center;padding:1.5rem;font-size:.76rem;color:var(--ink-soft);b
       </div>
     </div>
 
-    <!-- OVERALL -->
     <div class="sec-title">Overall Community</div>
     <div class="overall-grid" id="overall-stats"></div>
-
-    <!-- COMEBACK FEATURED STAT -->
     <div class="comeback-card" id="comeback-card"></div>
 
-    <!-- MEN / WOMEN SPLIT -->
     <div class="sec-title" style="margin-top:1.5rem">By Gender</div>
     <div class="split">
       <div class="split-panel men">
@@ -296,40 +268,35 @@ footer{text-align:center;padding:1.5rem;font-size:.76rem;color:var(--ink-soft);b
       </div>
     </div>
 
-    <!-- REACH -->
     <div class="sec-title">Reach</div>
     <div class="two-col">
       <div class="card"><div class="card-title">Top 10 Churches</div><div id="d-church"></div></div>
       <div class="card"><div class="card-title">Top 10 Cities</div><div id="d-city"></div></div>
     </div>
-
-    <p style="font-size:.75rem;color:var(--ink-soft);text-align:right;margin-top:.25rem" id="ts"></p>
+    <p style="font-size:.75rem;color:var(--ink-soft);text-align:right" id="ts"></p>
   </div>
 </div>
 
-<!-- ══════════════ DIRECTORY ══════════════ -->
+<!-- DIRECTORY -->
 <div id="panel-directory" class="panel">
-  <!-- Search -->
-  <div class="search-bar-wrap">
-    <input type="text" id="search-input" class="search-input" placeholder="Search by first or last name…" oninput="onSearch(this.value)" autocomplete="off">
-    <div class="search-dropdown" id="search-dropdown"></div>
+  <div class="search-row">
+    <div class="search-bar-wrap">
+      <input type="text" id="search-input" class="search-input" placeholder="Search by first or last name…" oninput="onSearch(this.value)" autocomplete="off">
+      <button class="search-clear" id="search-clear" onclick="clearSearch()" title="Clear search">✕</button>
+      <div class="search-dropdown" id="search-dropdown"></div>
+    </div>
   </div>
 
   <div class="dir-layout">
-    <!-- Filters -->
     <div class="sidebar">
       <div class="fbox"><div class="fbox-head">Weekend Type</div>
         <select id="f-wtype" onchange="pg=1;renderDir()">
-          <option value="">All</option>
-          <option value="Men">Men's</option>
-          <option value="Women">Women's</option>
+          <option value="">All</option><option value="Men">Men's</option><option value="Women">Women's</option>
         </select>
       </div>
       <div class="fbox"><div class="fbox-head">Role</div>
         <select id="f-role" onchange="pg=1;renderDir()">
-          <option value="">All</option>
-          <option value="Team">Team</option>
-          <option value="Candidate">Candidate</option>
+          <option value="">All</option><option value="Team">Team</option><option value="Candidate">Candidate</option>
         </select>
       </div>
       <div class="fbox"><div class="fbox-head">Weekend #</div>
@@ -338,21 +305,15 @@ footer{text-align:center;padding:1.5rem;font-size:.76rem;color:var(--ink-soft);b
       <div class="fbox"><div class="fbox-head">Church</div>
         <select id="f-church" onchange="pg=1;renderDir()"><option value="">All</option></select>
       </div>
-      <button class="btn sm" onclick="clearF()">↺ Clear filters</button>
+      <button class="btn sm" onclick="clearF()">↺ Clear all filters</button>
     </div>
 
-    <!-- Unique names table -->
     <div>
       <div class="tbl-wrap">
         <table>
-          <colgroup>
-            <col style="width:180px">
-            <col style="width:110px">
-            <col style="width:140px">
-            <col style="width:160px">
-          </colgroup>
+          <colgroup><col style="width:180px"><col style="width:105px"><col style="width:145px"><col style="width:150px"></colgroup>
           <thead><tr>
-            <th onclick="sortPeople('name')">Name ↕</th>
+            <th onclick="sortP('name')">Name ↕</th>
             <th>Weekend Type</th>
             <th>Went Through</th>
             <th>Church</th>
@@ -370,17 +331,16 @@ footer{text-align:center;padding:1.5rem;font-size:.76rem;color:var(--ink-soft);b
   </div>
 </div>
 
-<!-- ══════════════ MISSING DATA ══════════════ -->
+<!-- MISSING DATA -->
 <div id="panel-gaps" class="panel">
   <div class="sec-title">Missing Data Tracker</div>
   <div class="gap-grid" id="d-gap"></div>
   <p style="font-size:.76rem;color:var(--ink-soft);margin-top:10px">
-    <span class="chip y">#1</span> data in sheet &nbsp;·&nbsp;
-    <span class="chip n">#2</span> not yet added to Google Sheet
+    <span class="chip y">#1</span> data in sheet &nbsp;·&nbsp; <span class="chip n">#2</span> not yet added to Google Sheet
   </p>
 </div>
 
-<!-- ══════════════ PERSON MODAL ══════════════ -->
+<!-- PERSON MODAL -->
 <div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
   <div class="modal">
     <div class="modal-head">
@@ -395,13 +355,14 @@ footer{text-align:center;padding:1.5rem;font-size:.76rem;color:var(--ink-soft);b
 
 <script>
 const CSV='https://docs.google.com/spreadsheets/d/e/2PACX-1vQJuUcQ1RK2eqi-xyK_fbwVJ9RDD_2XvL8kYbqxuptC1USlSoEhrQi19rjmkkB_rQ/pub?output=csv';
+// ── UPDATE FORM — replace with your actual Google Form URL if you create one ──
+const UPDATE_FORM_URL='https://forms.gle/REPLACE_WITH_YOUR_FORM_URL';
+const UPDATE_EMAIL='kctddirectory@gmail.com'; // replace with your data manager email
 const C={green:'#0F6E56',blue:'#1A5FA8',pink:'#A0335A',amber:'#B8700F',purple:'#5B3A8E'};
-let DB=[],CH={},PEOPLE={},verified=false;
-// Directory state — unique people list
-let PLIST=[],pg=1,pSortCol='name',pSortDir=1;
+let DB=[],CH={},PEOPLE={},PLIST=[],verified=false,pg=1,pSortDir=1;
 const PER=30;
 
-// ── VERIFY ─────────────────────────────────────────────────────────────
+// ── PHONE VERIFY ──────────────────────────────────────────────────────
 function fmtPhone(el){
   let v=el.value.replace(/\D/g,'').slice(0,10);
   if(v.length>6)v='('+v.slice(0,3)+') '+v.slice(3,6)+'-'+v.slice(6);
@@ -416,14 +377,11 @@ function doVerify(){
   if(d.length<10){msg.textContent='Please enter a 10-digit number.';msg.style.color='var(--pink)';return;}
   const match=DB.find(r=>normP(r.phone||'')===d);
   if(match){
-    verified=true;
-    st.className='vstatus ok';st.textContent='✓ '+match.name;
-    msg.textContent='Verified! Click any name in the directory for full contact details.';
-    msg.style.color='var(--green)';
+    verified=true;st.className='vstatus ok';st.textContent='✓ '+match.name;
+    msg.textContent='Verified! Click any name in the directory for full contact details.';msg.style.color='var(--green)';
   }else{
     verified=false;st.className='vstatus';st.textContent='🔒 Guest';
-    msg.textContent='Number not found — contact details visible once phone numbers are in the sheet.';
-    msg.style.color='var(--amber)';
+    msg.textContent='Number not found — contact details visible once phone numbers are in the sheet.';msg.style.color='var(--amber)';
   }
 }
 
@@ -471,19 +429,17 @@ function parseCSV(text){
     const wknd=(row['Weekend']||'').trim();
     const gender=wknd.toLowerCase().includes('women')?'Women':'Men';
     const role=wknd.toLowerCase().includes('candidate')?'Candidate':'Team';
-    return{
-      name:row['Name'],weekend:wknd,
-      weekendNum:(row['Weekend Number']||'').trim(),
-      position:(row['Position']||'').trim(),
-      gender,role,
-      phone:(row['Phone']||'').trim(),
-      email:(row['Email']||'').toLowerCase().trim(),
-      address:(row['Street Address']||'').trim(),
-      city:(row['City']||'').trim(),
-      state:(row['State']||'').trim(),
-      zip:(row['Zip']||'').trim(),
-      church:(row['Church']||'').trim()
-    };
+    // Extract weekend number as integer for sorting (most recent = highest number)
+    const wNum=(row['Weekend Number']||'').trim();
+    const wNumInt=parseInt((wNum.match(/#(\d+)/)||[0,0])[1])||0;
+    return{name:row['Name'],weekend:wknd,weekendNum:wNum,weekendNumInt:wNumInt,
+      position:(row['Position']||'').trim(),gender,role,
+      phone:(row['Phone']||'').trim(),email:(row['Email']||'').toLowerCase().trim(),
+      address:(row['Street Address']||'').trim(),city:(row['City']||'').trim(),
+      state:(row['State']||'').trim(),zip:(row['Zip']||'').trim(),
+      church:(row['Church']||'').trim(),
+      community:(row['Community']||'').trim(),
+      photo:(row['Photo']||'').trim()};
   });
 }
 function splitLine(line){
@@ -492,13 +448,16 @@ function splitLine(line){
   res.push(cur);return res;
 }
 
-// ── PEOPLE INDEX ──────────────────────────────────────────────────────
+// ── PEOPLE INDEX — use most recent weekend for contact info ───────────
 function buildPeopleIndex(){
   PEOPLE={};
-  DB.forEach(r=>{
+  // Sort DB by weekendNumInt descending so most recent records come first
+  const sorted=[...DB].sort((a,b)=>b.weekendNumInt-a.weekendNumInt);
+  sorted.forEach(r=>{
     const k=r.name.toLowerCase();
-    if(!PEOPLE[k])PEOPLE[k]={name:r.name,phone:'',email:'',address:'',city:'',state:'',zip:'',church:'',gender:'',records:[]};
+    if(!PEOPLE[k])PEOPLE[k]={name:r.name,phone:'',email:'',address:'',city:'',state:'',zip:'',church:'',community:'',photo:'',gender:'',records:[]};
     const p=PEOPLE[k];
+    // Only overwrite if we don't have it yet — since sorted by most recent, first one wins
     if(r.phone&&!p.phone)p.phone=r.phone;
     if(r.email&&!p.email)p.email=r.email;
     if(r.address&&!p.address)p.address=r.address;
@@ -506,10 +465,16 @@ function buildPeopleIndex(){
     if(r.state&&!p.state)p.state=r.state;
     if(r.zip&&!p.zip)p.zip=r.zip;
     if(r.church&&!p.church)p.church=r.church;
+    if(r.community&&!p.community)p.community=r.community;
+    if(r.photo&&!p.photo)p.photo=r.photo;
     if(r.gender&&!p.gender)p.gender=r.gender;
+    // Add record in chronological order
     p.records.push(r);
   });
-  // Build flat people list for directory
+  // Re-sort each person's records chronologically (oldest first) for display
+  Object.values(PEOPLE).forEach(p=>{
+    p.records.sort((a,b)=>a.weekendNumInt-b.weekendNumInt);
+  });
   PLIST=Object.values(PEOPLE);
 }
 
@@ -525,7 +490,6 @@ function render(){
   const churches=new Set(DB.map(r=>r.church).filter(Boolean));
   const wknds=new Set(DB.map(r=>r.weekendNum).filter(Boolean));
 
-  // Overall
   set('overall-stats',
     osc('g','👥',uAll.size.toLocaleString(),'Unique people')+
     osc('b','🤝',uTeam.size.toLocaleString(),'Unique team members')+
@@ -533,49 +497,30 @@ function render(){
     osc('tl','📅',wknds.size,'Weekends with data')+
     osc('pu','⛪',churches.size,'Churches represented')
   );
-
-  // Comeback featured card
   set('comeback-card',`
     <div class="comeback-pct">${pct}%</div>
     <div class="comeback-text">
       <h3>of candidates came back to serve</h3>
-      <p>${cameBack.length.toLocaleString()} out of ${uCand.size.toLocaleString()} candidates have gone on to serve on a KCTD weekend team</p>
-      <div class="comeback-bar-wrap">
-        <div class="comeback-bar-track"><div class="comeback-bar-fill" style="width:${pct}%"></div></div>
-      </div>
+      <p>${cameBack.length.toLocaleString()} out of ${uCand.size.toLocaleString()} unique candidates have gone on to serve on a KCTD weekend team</p>
+      <div class="comeback-bar-track"><div class="comeback-bar-fill" style="width:${pct}%"></div></div>
     </div>
   `);
 
-  // Men
-  const menTeam=team.filter(r=>r.gender==='Men');
-  const menCand=cands.filter(r=>r.gender==='Men');
-  const uMT=new Set(menTeam.map(r=>r.name));
-  const uMC=new Set(menCand.map(r=>r.name));
-  const menBack=[...uMC].filter(n=>uTeam.has(n));
-  const menNot=[...uMC].filter(n=>!uTeam.has(n));
+  const menTeam=team.filter(r=>r.gender==='Men'),menCand=cands.filter(r=>r.gender==='Men');
+  const uMT=new Set(menTeam.map(r=>r.name)),uMC=new Set(menCand.map(r=>r.name));
   set('men-stats',
-    spsc('blue',uMT.size,'Unique team')+
-    spsc('blue',uMC.size,'Unique candidates')+
-    spsc('green',menBack.length,'Came back to serve')+
-    spsc('amber',menTeam.length,'Team records')+
-    spsc('amber',menCand.length,'Candidate records')+
-    spsc('purple',menNot.length,'Not yet served')
+    spsc('blue',uMT.size,'Unique team')+spsc('blue',uMC.size,'Unique candidates')+
+    spsc('green',[...uMC].filter(n=>uTeam.has(n)).length,'Came back to serve')+
+    spsc('amber',menTeam.length,'Team records')+spsc('amber',menCand.length,'Candidate records')+
+    spsc('purple',[...uMC].filter(n=>!uTeam.has(n)).length,'Not yet served')
   );
-
-  // Women
-  const womenTeam=team.filter(r=>r.gender==='Women');
-  const womenCand=cands.filter(r=>r.gender==='Women');
-  const uWT=new Set(womenTeam.map(r=>r.name));
-  const uWC=new Set(womenCand.map(r=>r.name));
-  const womenBack=[...uWC].filter(n=>uTeam.has(n));
-  const womenNot=[...uWC].filter(n=>!uTeam.has(n));
+  const womenTeam=team.filter(r=>r.gender==='Women'),womenCand=cands.filter(r=>r.gender==='Women');
+  const uWT=new Set(womenTeam.map(r=>r.name)),uWC=new Set(womenCand.map(r=>r.name));
   set('women-stats',
-    spsc('pink',uWT.size,'Unique team')+
-    spsc('pink',uWC.size,'Unique candidates')+
-    spsc('green',womenBack.length,'Came back to serve')+
-    spsc('amber',womenTeam.length,'Team records')+
-    spsc('amber',womenCand.length,'Candidate records')+
-    spsc('purple',womenNot.length,'Not yet served')
+    spsc('pink',uWT.size,'Unique team')+spsc('pink',uWC.size,'Unique candidates')+
+    spsc('green',[...uWC].filter(n=>uTeam.has(n)).length,'Came back to serve')+
+    spsc('amber',womenTeam.length,'Team records')+spsc('amber',womenCand.length,'Candidate records')+
+    spsc('purple',[...uWC].filter(n=>!uTeam.has(n)).length,'Not yet served')
   );
 
   buildColChart('mt-chart','mt-wrap',menTeam,C.blue);
@@ -583,12 +528,10 @@ function render(){
   buildColChart('wt-chart','wt-wrap',womenTeam,C.pink);
   buildColChart('wc-chart','wc-wrap',womenCand,C.pink);
 
-  // Churches
   const chC={};DB.forEach(r=>{if(r.church)chC[r.church]=(chC[r.church]||0)+1;});
   const topCh=Object.entries(chC).sort((a,b)=>b[1]-a[1]).slice(0,10);
   set('d-church',topCh.length?topCh.map(([c,n])=>br(c,n,topCh[0][1],C.green,n)).join(''):'<p style="font-size:.8rem;color:var(--ink-soft)">No church data yet.</p>');
 
-  // Cities
   const ciC={};DB.forEach(r=>{if(r.city)ciC[r.city]=(ciC[r.city]||0)+1;});
   const topCi=Object.entries(ciC).sort((a,b)=>b[1]-a[1]).slice(0,10);
   set('d-city',topCi.length?topCi.map(([c,n])=>br(c,n,topCi[0][1],C.pink,n)).join(''):'<p style="font-size:.8rem;color:var(--ink-soft)">No city data yet.</p>');
@@ -613,11 +556,11 @@ function buildColChart(canvasId,wrapId,records,color){
   const sorted=Object.entries(wkndC).sort((a,b)=>a[0].localeCompare(b[0]));
   const wrap=document.getElementById(wrapId);
   if(!sorted.length){wrap.style.height='50px';wrap.innerHTML='<p style="font-size:.76rem;color:var(--ink-soft);padding:.75rem 0">No data yet</p>';return;}
-  const labels=sorted.map(([w])=>w.replace(/KCTD (Men|Women)('s)? ?/i,'').replace('Candidate','Cand.').replace(/\s+/g,' ').trim());
+  const labels=sorted.map(([w])=>w.replace(/KCTD (Men|Women)('s)? ?/i,'').replace('Candidate','Cand.').trim());
   const vals=sorted.map(([,n])=>n);
-  const h=Math.max(160,labels.length*22+50);
-  wrap.style.height=h+'px';
-  if(wrap.querySelector('canvas'))wrap.innerHTML=`<canvas id="${canvasId}"></canvas>`;
+  wrap.style.height=Math.max(160,labels.length*22+50)+'px';
+  // Ensure canvas exists
+  if(!document.getElementById(canvasId)){wrap.innerHTML=`<canvas id="${canvasId}"></canvas>`;}
   CH[canvasId]=new Chart(document.getElementById(canvasId),{
     type:'bar',
     data:{labels,datasets:[{data:vals,backgroundColor:color+'BB',borderColor:color,borderWidth:1,borderRadius:4}]},
@@ -629,13 +572,9 @@ function buildColChart(canvasId,wrapId,records,color){
         y:{grid:{display:false},ticks:{font:{size:9},color:'#666',autoSkip:false}}
       },
       animation:{onComplete({chart:ch}){
-        const ctx=ch.ctx;
-        ctx.save();ctx.font='600 9px DM Sans,sans-serif';ctx.fillStyle='#555';ctx.textAlign='left';
-        ch.data.datasets[0].data.forEach((val,i)=>{
-          const bar=ch.getDatasetMeta(0).data[i];
-          if(bar)ctx.fillText(val,bar.x+4,bar.y+3);
-        });
-        ctx.restore();
+        const c=ch.ctx;c.save();c.font='600 9px DM Sans,sans-serif';c.fillStyle='#555';c.textAlign='left';
+        ch.data.datasets[0].data.forEach((val,i)=>{const bar=ch.getDatasetMeta(0).data[i];if(bar)c.fillText(val,bar.x+4,bar.y+3);});
+        c.restore();
       }}
     }
   });
@@ -647,10 +586,8 @@ function buildGaps(){
   DB.forEach(r=>{
     const m=(r.weekendNum||'').match(/#(\d+)/);if(!m)return;
     const n=+m[1],w=(r.weekend||'').toLowerCase();
-    if(w==='kctd men')msH.add(n);
-    else if(w==='kctd men candidate')mcH.add(n);
-    else if(w==='kctd women')wsH.add(n);
-    else if(w==='kctd women candidate')wcH.add(n);
+    if(w==='kctd men')msH.add(n);else if(w==='kctd men candidate')mcH.add(n);
+    else if(w==='kctd women')wsH.add(n);else if(w==='kctd women candidate')wcH.add(n);
   });
   set('d-gap',
     mkGap(msH,26,C.blue,"Men's Team")+mkGap(mcH,26,C.blue,"Men's Candidates")+
@@ -667,12 +604,11 @@ function mkGap(have,total,color,title){
   </div>`;
 }
 
-// ── DIRECTORY — UNIQUE NAMES ───────────────────────────────────────────
+// ── DIRECTORY ─────────────────────────────────────────────────────────
 function buildFilters(){
   const wknds=[...new Set(DB.map(r=>r.weekendNum).filter(Boolean))].sort();
   const chs=[...new Set(DB.map(r=>r.church).filter(Boolean))].sort();
-  fillSel('f-wknd',wknds);
-  fillSel('f-church',chs);
+  fillSel('f-wknd',wknds);fillSel('f-church',chs);
 }
 function fillSel(id,arr){
   const s=document.getElementById(id),prev=s.value;
@@ -680,24 +616,19 @@ function fillSel(id,arr){
   if(prev)s.value=prev;
 }
 function clearF(){['f-wtype','f-role','f-wknd','f-church'].forEach(id=>document.getElementById(id).value='');pg=1;renderDir();}
-
-function sortPeople(col){if(pSortCol===col)pSortDir*=-1;else{pSortCol=col;pSortDir=1;}pg=1;renderDir();}
+function sortP(col){pSortDir*=-1;pg=1;renderDir();}
 
 function renderDir(){
   if(!PLIST.length)return;
-  const fwtype=document.getElementById('f-wtype').value;   // Men / Women
-  const frole=document.getElementById('f-role').value;     // Team / Candidate
-  const fwknd=document.getElementById('f-wknd').value;     // specific weekend number
+  const fwtype=document.getElementById('f-wtype').value;
+  const frole=document.getElementById('f-role').value;
+  const fwknd=document.getElementById('f-wknd').value;
   const fchurch=document.getElementById('f-church').value;
   const sq=(document.getElementById('search-input').value||'').toLowerCase().trim();
 
-  // Filter unique people based on their records
   let filtered=PLIST.filter(p=>{
-    // Name search
     if(sq&&!p.name.toLowerCase().includes(sq)&&!p.name.toLowerCase().split(' ').some(pt=>pt.startsWith(sq)))return false;
-    // Church filter
     if(fchurch&&p.church!==fchurch)return false;
-    // Check if any record matches the weekend type / role / weekend number filters
     const matchRecs=p.records.filter(r=>{
       if(fwtype&&r.gender!==fwtype)return false;
       if(frole&&r.role!==frole)return false;
@@ -707,28 +638,18 @@ function renderDir(){
     return matchRecs.length>0;
   });
 
-  // Sort
-  filtered.sort((a,b)=>a[pSortCol]?.localeCompare(b[pSortCol]||'')*pSortDir||0);
-
+  filtered.sort((a,b)=>a.name.localeCompare(b.name)*pSortDir);
   const total=filtered.length;
   const maxPg=Math.max(1,Math.ceil(total/PER));
   if(pg>maxPg)pg=maxPg;
   const slice=filtered.slice((pg-1)*PER,pg*PER);
-
   set('pg-info','Page '+pg+' of '+maxPg);
   set('pg-total',total.toLocaleString()+' unique person'+(total!==1?'s':''));
 
   set('dir-body',slice.map(p=>{
-    // Weekend type badge
-    const g=p.gender;
-    const gBadge=g==='Men'?'<span class="badge bm">Men\'s</span>':g==='Women'?'<span class="badge bw">Women\'s</span>':'<span class="badge">Both</span>';
-
-    // "Went through" — candidate weekend numbers
-    const candWknds=[...new Set(p.records.filter(r=>r.role==='Candidate').map(r=>r.weekendNum))].sort();
-    const wentThrough=candWknds.length
-      ? candWknds.map(w=>w.replace(/KCTD (Men|Women)('s)? ?/i,'#')).join(', ')
-      : '—';
-
+    const gBadge=p.gender==='Men'?'<span class="badge bm">Men\'s</span>':p.gender==='Women'?'<span class="badge bw">Women\'s</span>':'—';
+    const candWknds=[...new Set(p.records.filter(r=>r.role==='Candidate').map(r=>r.weekendNum))].sort((a,b)=>a.localeCompare(b));
+    const wentThrough=candWknds.length?candWknds.map(w=>w.replace(/KCTD (Men|Women)('s)? ?/i,'').replace('Candidate','Cand.').trim()).join(', '):'—';
     return`<tr>
       <td class="nc" onclick="openPerson('${esc(p.name.replace(/'/g,"\\'"))}')">${esc(p.name)}</td>
       <td>${gBadge}</td>
@@ -740,13 +661,22 @@ function renderDir(){
 function prevPg(){if(pg>1){pg--;renderDir();}}
 function nextPg(){pg++;renderDir();}
 
-// ── SEARCH DROPDOWN ───────────────────────────────────────────────────
+// ── SEARCH ────────────────────────────────────────────────────────────
 let stimer=null;
 function onSearch(val){
   clearTimeout(stimer);
   const dd=document.getElementById('search-dropdown');
+  const clr=document.getElementById('search-clear');
+  clr.classList.toggle('visible',val.length>0);
   if(!val.trim()||val.length<2){dd.classList.remove('open');renderDir();return;}
   stimer=setTimeout(()=>{doSearch(val);renderDir();},120);
+}
+function clearSearch(){
+  document.getElementById('search-input').value='';
+  document.getElementById('search-clear').classList.remove('visible');
+  document.getElementById('search-dropdown').classList.remove('open');
+  pg=1;renderDir();
+  document.getElementById('search-input').focus();
 }
 function doSearch(val){
   const q=val.toLowerCase().trim();
@@ -758,7 +688,7 @@ function doSearch(val){
   if(!matches.length){dd.innerHTML='<div class="search-empty">No results for "'+esc(val)+'"</div>';dd.classList.add('open');return;}
   dd.innerHTML=matches.map(p=>{
     const tw=new Set(p.records.filter(r=>r.role==='Team').map(r=>r.weekendNum)).size;
-    const cw=new Set(p.records.filter(r=>r.role==='Candidate').map(r=>r.weekendNum)).size;
+    const cw=p.records.filter(r=>r.role==='Candidate').length;
     const meta=[];
     if(tw)meta.push('Team · '+tw+' wknd'+(tw!==1?'s':''));
     if(cw)meta.push('Candidate');
@@ -781,44 +711,66 @@ document.addEventListener('click',e=>{
 function openPerson(name){
   document.getElementById('search-dropdown').classList.remove('open');
   const p=PEOPLE[name.toLowerCase()];if(!p)return;
-  const teamR=p.records.filter(r=>r.role==='Team').sort((a,b)=>a.weekendNum.localeCompare(b.weekendNum));
-  const candR=p.records.filter(r=>r.role==='Candidate').sort((a,b)=>a.weekendNum.localeCompare(b.weekendNum));
+  const teamR=p.records.filter(r=>r.role==='Team');
+  const candR=p.records.filter(r=>r.role==='Candidate');
   const tw=new Set(teamR.map(r=>r.weekendNum)).size;
   const sub=[];
   if(p.gender)sub.push(p.gender);
-  if(tw)sub.push('Served on '+tw+' weekend'+(tw!==1?'s':''));
-  if(candR.length)sub.push('Candidate '+(candR.length>1?candR.length+'x':''));
-  set('m-name',p.name);
-  set('m-sub',sub.join(' · '));
+  if(tw)sub.push('Served '+tw+' weekend'+(tw!==1?'s':''));
+  if(candR.length)sub.push('Candidate');
+  set('m-name',p.name);set('m-sub',sub.join(' · '));
+
+  // Most recent weekend number for this person
+  const mostRecentWknd=p.records.reduce((a,b)=>b.weekendNumInt>a.weekendNumInt?b:a,p.records[0]);
+
+  // Convert Google Drive share link to direct image URL if needed
+  function toImgUrl(url){
+    if(!url)return'';
+    const m=url.match(/\/file\/d\/([^/]+)/);
+    if(m)return'https://drive.google.com/thumbnail?id='+m[1]+'&sz=w200';
+    return url;
+  }
 
   let body='';
-  // Contact
-  body+=`<div class="modal-sec"><h3>Contact Information</h3>`;
+
+  // Photo + contact header
+  const imgUrl=toImgUrl(p.photo);
+  if(imgUrl){
+    body+=`<div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:1rem">
+      <img src="${esc(imgUrl)}" alt="${esc(p.name)}" style="width:80px;height:80px;border-radius:10px;object-fit:cover;border:1px solid var(--border);flex-shrink:0" onerror="this.style.display='none'">
+      <div style="flex:1">
+        ${p.community?`<div style="margin-bottom:6px"><span class="badge bt2">${esc(p.community)}</span></div>`:''}
+        <div style="font-size:.83rem;color:var(--ink-soft)">${esc(p.church||'')}${p.city?' · '+esc(p.city):''}</div>
+      </div>
+    </div>`;
+  } else if(p.community){
+    body+=`<div style="margin-bottom:10px"><span class="badge bt2">${esc(p.community)}</span></div>`;
+  }
+  // Contact — sourced from most recent weekend
+  body+=`<div class="modal-sec"><h3>Contact Information <span style="font-weight:400;color:var(--ink-soft);font-size:.7rem;text-transform:none;letter-spacing:0">(from most recent weekend: ${esc(mostRecentWknd?.weekendNum||'')})</span></h3>`;
   if(verified){
     body+=`<div class="cg">
       ${ci('Phone',p.phone||'—')}
       ${ci('Email',p.email||'—')}
       ${ci('Address',[p.address,p.city,p.state,p.zip].filter(Boolean).join(', ')||'—')}
       ${ci('Church',p.church||'—')}
+      ${p.community?ci('Community',p.community):''}
     </div>`;
   }else{
     body+=`<div class="locked-notice">🔒 Verify your phone number on the Dashboard to unlock contact details.</div>`;
     body+=`<div class="cg" style="margin-top:8px">
       ${ci('Church',p.church||'—')}
       ${ci('City',[p.city,p.state].filter(Boolean).join(', ')||'—')}
+      ${p.community?ci('Community',p.community):''}
     </div>`;
   }
   body+=`</div>`;
 
-  // Team history
+  // Team history (oldest → newest)
   if(teamR.length){
     body+=`<div class="modal-sec"><h3>Team History · ${tw} weekend${tw!==1?'s':''}</h3><div class="wlist">`;
     teamR.forEach(r=>{
-      body+=`<div class="wrow">
-        <span class="wnum">${esc(r.weekendNum)}</span>
-        <span class="wpos">${esc(r.position||'—')}</span>
-        <span class="badge ${r.gender==='Men'?'bm':'bw'}">${esc(r.gender)}</span>
-      </div>`;
+      body+=`<div class="wrow"><span class="wnum">${esc(r.weekendNum)}</span><span class="wpos">${esc(r.position||'—')}</span><span class="badge ${r.gender==='Men'?'bm':'bw'}">${esc(r.gender)}</span></div>`;
     });
     body+=`</div></div>`;
   }
@@ -827,14 +779,36 @@ function openPerson(name){
   if(candR.length){
     body+=`<div class="modal-sec"><h3>Candidate History</h3><div class="wlist">`;
     candR.forEach(r=>{
-      body+=`<div class="wrow">
-        <span class="wnum">${esc(r.weekendNum)}</span>
-        <span class="wpos">${esc(r.weekend)}</span>
-        <span class="badge ${r.gender==='Men'?'bm':'bw'}">${esc(r.gender)}</span>
-      </div>`;
+      body+=`<div class="wrow"><span class="wnum">${esc(r.weekendNum)}</span><span class="wpos">${esc(r.weekend)}</span><span class="badge ${r.gender==='Men'?'bm':'bw'}">${esc(r.gender)}</span></div>`;
     });
     body+=`</div></div>`;
   }
+
+  // Update section
+  const emailSubject=encodeURIComponent('KCTD Directory Update Request — '+p.name);
+  const emailBody=encodeURIComponent(
+    'Hi,\n\nI would like to update my information in the KCTD directory.\n\n'+
+    'Name: '+p.name+'\n'+
+    'What needs updating:\n\n'+
+    '[ ] Phone number: \n'+
+    '[ ] Email: \n'+
+    '[ ] Address: \n'+
+    '[ ] Church: \n'+
+    '[ ] Community: \n'+
+    '[ ] Photo (paste a link to your photo): \n'+
+    '[ ] Missing weekend(s) I served: \n'+
+    '[ ] Missing weekend(s) I went through as candidate: \n'+
+    '[ ] Other: \n\n'+
+    'Thank you!'
+  );
+  body+=`<div class="update-section">
+    <h3>✏️ Request an Update</h3>
+    <p>Is your information incorrect or missing a weekend? Submit a correction and our data manager will update the sheet.</p>
+    <div class="update-btns">
+      <a href="mailto:${UPDATE_EMAIL}?subject=${emailSubject}&body=${emailBody}" class="btn primary" style="text-decoration:none">✉️ Email update request</a>
+      <a href="${UPDATE_FORM_URL}" target="_blank" class="btn blue" style="text-decoration:none">📋 Fill out update form</a>
+    </div>
+  </div>`;
 
   document.getElementById('m-body').innerHTML=body;
   document.getElementById('modal-overlay').classList.add('open');
@@ -844,13 +818,7 @@ function closeModal(e){if(e.target===document.getElementById('modal-overlay'))cl
 function closeModalDirect(){document.getElementById('modal-overlay').classList.remove('open');}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModalDirect();});
 
-// ── UTILS ─────────────────────────────────────────────────────────────
-function set(id,html){
-  const el=document.getElementById(id);
-  if(!el)return;
-  if(typeof html==='string'&&html.match(/<[a-z]/i))el.innerHTML=html;
-  else el.textContent=html;
-}
+function set(id,html){const el=document.getElementById(id);if(!el)return;if(typeof html==='string'&&html.match(/<[a-z]/i))el.innerHTML=html;else el.textContent=html;}
 function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 
 go();
