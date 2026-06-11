@@ -90,7 +90,8 @@ body{font-family:"Inter",sans-serif;background:var(--sand);color:var(--text);min
       <div class="brand-text">Tres Dias App</div>
       
     </div>
-  </div>
+    <button onclick="openIndexAdmin()" style="background:rgba(255,255,255,0.1);border:none;color:rgba(245,239,228,0.7);padding:6px 14px;border-radius:20px;font-size:12px;cursor:pointer;font-family:inherit;margin-left:auto">&#9881; Admin</button>
+</div>
 </header>
 
 <section class="hero">
@@ -102,7 +103,7 @@ body{font-family:"Inter",sans-serif;background:var(--sand);color:var(--text);min
 
 <div class="portal-grid">
 
-  <a class="portal-card" href="kctd-women.html">
+  <a class="portal-card" id="link-kctd-women" href="kctd-women.html">
     <div class="card-accent accent-gold"></div>
     <div class="card-header">
       <div class="card-icon kctd-women">&#9792;</div>
@@ -118,7 +119,7 @@ body{font-family:"Inter",sans-serif;background:var(--sand);color:var(--text);min
     </div>
   </a>
 
-  <a class="portal-card" href="kctd-men.html">
+  <a class="portal-card" id="link-kctd-men" href="kctd-men.html">
     <div class="card-accent accent-blue"></div>
     <div class="card-header">
       <div class="card-icon kctd-men">&#9794;</div>
@@ -134,7 +135,7 @@ body{font-family:"Inter",sans-serif;background:var(--sand);color:var(--text);min
     </div>
   </a>
 
-  <a class="portal-card" href="gltd-women.html">
+  <a class="portal-card" id="link-gltd-women" href="https://kctdmedia.github.io/tresdias/gltd-women.html">
     <div class="card-accent accent-purple"></div>
     <div class="card-header">
       <div class="card-icon gltd">&#9792;</div>
@@ -150,7 +151,7 @@ body{font-family:"Inter",sans-serif;background:var(--sand);color:var(--text);min
     </div>
   </a>
 
-  <a class="portal-card" href="https://kctdmedia.github.io/kctd-directory/" target="_blank">
+  <a class="portal-card" id="link-directory" href="https://kctdmedia.github.io/tresdias/directory.html" target="_blank">
     <div class="card-accent accent-sage"></div>
     <div class="card-header">
       <div class="card-icon directory">&#128218;</div>
@@ -169,6 +170,99 @@ body{font-family:"Inter",sans-serif;background:var(--sand);color:var(--text);min
 </div>
 
 <footer class="site-footer">Tres Dias App &mdash; Built with love for the community</footer>
+
+
+<!-- INDEX ADMIN -->
+<div id="idx-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:400;align-items:center;justify-content:center" onclick="if(event.target===this)closeIndexAdmin()">
+  <div style="background:#F5EFE4;border-radius:16px;width:90%;max-width:540px;overflow:hidden;animation:slideUp .28s cubic-bezier(.4,0,.2,1)">
+    <div style="background:#2C1F0E;padding:16px 20px;display:flex;align-items:center;justify-content:space-between">
+      <span style="font-family:'Crimson Pro',Georgia,serif;font-size:17px;font-weight:600;color:#F5EFE4">&#9881; Hub Admin — Portal Links</span>
+      <button onclick="closeIndexAdmin()" style="background:rgba(255,255,255,0.1);border:none;border-radius:50%;width:30px;height:30px;cursor:pointer;color:#F5EFE4;font-size:16px">&#10005;</button>
+    </div>
+    <div style="padding:20px">
+      <p style="font-size:13px;color:#5C4A2E;margin-bottom:16px;line-height:1.5">Update the URLs for each portal card. Changes are saved and stick across page refreshes.</p>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div>
+          <label style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:#9C8A6E;display:block;margin-bottom:4px">KCTD Women Portal URL</label>
+          <input id="idx-kctd-women" type="url" placeholder="https://..." style="width:100%;padding:9px 12px;border:1px solid rgba(80,50,10,0.13);border-radius:9px;font-size:13px;font-family:monospace;background:#fff;color:#1E1408">
+        </div>
+        <div>
+          <label style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:#9C8A6E;display:block;margin-bottom:4px">KCTD Men Portal URL</label>
+          <input id="idx-kctd-men" type="url" placeholder="https://..." style="width:100%;padding:9px 12px;border:1px solid rgba(80,50,10,0.13);border-radius:9px;font-size:13px;font-family:monospace;background:#fff;color:#1E1408">
+        </div>
+        <div>
+          <label style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:#9C8A6E;display:block;margin-bottom:4px">GLTD Women Portal URL</label>
+          <input id="idx-gltd-women" type="url" placeholder="https://..." style="width:100%;padding:9px 12px;border:1px solid rgba(80,50,10,0.13);border-radius:9px;font-size:13px;font-family:monospace;background:#fff;color:#1E1408">
+        </div>
+        <div>
+          <label style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:#9C8A6E;display:block;margin-bottom:4px">KCTD Directory URL</label>
+          <input id="idx-directory" type="url" placeholder="https://..." style="width:100%;padding:9px 12px;border:1px solid rgba(80,50,10,0.13);border-radius:9px;font-size:13px;font-family:monospace;background:#fff;color:#1E1408">
+        </div>
+      </div>
+      <div style="margin-top:18px;display:flex;gap:10px">
+        <button onclick="saveIndexAdmin()" style="background:#C8972A;color:#fff;border:none;padding:11px 24px;border-radius:24px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit">Save Links</button>
+        <button onclick="closeIndexAdmin()" style="background:none;border:1px solid rgba(80,50,10,0.2);padding:11px 18px;border-radius:24px;font-size:14px;cursor:pointer;color:#5C4A2E;font-family:inherit">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+@keyframes slideUp{from{transform:translateY(30px);opacity:0}to{transform:translateY(0);opacity:1}}
+</style>
+
+<script>
+var IDX_DEFAULTS = {
+  'kctd-women': 'kctd-women.html',
+  'kctd-men':   'kctd-men.html',
+  'gltd-women': 'https://kctdmedia.github.io/tresdias/gltd-women.html',
+  'directory':  'https://kctdmedia.github.io/tresdias/directory.html'
+};
+
+function loadIndexLinks() {
+  Object.keys(IDX_DEFAULTS).forEach(function(k) {
+    var saved = localStorage.getItem('idx_link_' + k);
+    var url = saved || IDX_DEFAULTS[k];
+    var el = document.getElementById('link-' + k);
+    if (el) el.href = url;
+    var inp = document.getElementById('idx-' + k);
+    if (inp) inp.value = url;
+  });
+}
+
+function openIndexAdmin() {
+  loadIndexLinks();
+  var ov = document.getElementById('idx-overlay');
+  if (ov) ov.style.display = 'flex';
+}
+
+function closeIndexAdmin() {
+  var ov = document.getElementById('idx-overlay');
+  if (ov) ov.style.display = 'none';
+}
+
+function saveIndexLinks() {
+  Object.keys(IDX_DEFAULTS).forEach(function(k) {
+    var inp = document.getElementById('idx-' + k);
+    if (inp && inp.value.trim()) {
+      localStorage.setItem('idx_link_' + k, inp.value.trim());
+      var el = document.getElementById('link-' + k);
+      if (el) el.href = inp.value.trim();
+    }
+  });
+  closeIndexAdmin();
+  var t = document.createElement('div');
+  t.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#2C1F0E;color:#F5EFE4;padding:12px 24px;border-radius:24px;font-size:13px;z-index:999';
+  t.textContent = 'Links saved ✓';
+  document.body.appendChild(t);
+  setTimeout(function(){ t.remove(); }, 2500);
+}
+
+// alias
+function saveIndexAdmin() { saveIndexLinks(); }
+
+loadIndexLinks();
+</script>
 
 </body>
 </html>
